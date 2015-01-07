@@ -3,7 +3,7 @@ public class Solution {
         int left = 0, right = A.length - 1;
         if (target == A[0]) return 0;
         if (target == A[A.length-1]) return A.length - 1;
-        // target in open interval (A[0], +inf) & (-inf, A[A.length-1])
+        // target in open interval (A[0], +inf) & (-inf, A[A.length-1]) or (A[0], A[A.length-1])
         while (left < right - 1) {
             int mid = (left + right) / 2;
             if (A[mid] == target) return mid;
