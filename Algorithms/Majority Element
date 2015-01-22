@@ -1,0 +1,15 @@
+public class Solution {
+    public int majorityElement(int[] num) {
+        if (num.length == 1) return num[0];
+        HashMap<Integer, Integer> hash = new HashMap<Integer, Integer>();
+        for (int n : num) {
+            if (hash.containsKey(n)) {
+                hash.put(n, hash.get(n) + 1);
+                if (hash.get(n) > num.length/2) return n;
+            } else {
+                hash.put(n, 1);
+            }
+        }
+        return -1; // never happen
+    }
+}
